@@ -1,0 +1,17 @@
+Source: thonny
+Section: devel
+Priority: optional
+Maintainer: Serge Schneider <serge@raspberrypi.org>
+Build-Depends: debhelper (>= 9), dh-python, python3-all, python3-setuptools, python3-tk
+Standards-Version: 3.9.8
+Homepage: http://thonny.org/
+X-Python3-Version: >= 3.2
+
+Package: python3-thonny
+Architecture: all
+Depends: ${python3:Depends}, ${misc:Depends}, python3-jedi, python3-tk,
+ python3-venv, python3-pip 
+Description: Python IDE for beginners
+ Thonny is a simple Python IDE with features useful for learning programming.
+ .
+ See http://thonny.org for more info.
