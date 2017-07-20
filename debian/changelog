@@ -1,3 +1,10 @@
+thonny (2.1.10-1+rpi2) stretch; urgency=medium
+
+  * Rename pixel theme to pi theme
+  * Use piboto instead of roboto
+
+ -- Serge Schneider <serge@raspberrypi.org>  Thu, 20 Jul 2017 11:17:47 +0100
+
 thonny (2.1.10-1+rpi1) stretch; urgency=medium
 
   * Initial release

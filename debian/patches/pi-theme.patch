@@ -29,7 +29,7 @@
                  "thonny.plugins", 
                  "thonny.plugins.system_shell",
                  "thonny.plugins.help",
-+                "thonny.plugins.pixel_theme",
++                "thonny.plugins.pi_theme",
                  ],
        package_data={'': ['VERSION',  'res/*'],
                      'thonny.plugins.help' : ['*.rst']},
@@ -45,7 +45,7 @@
 \ No newline at end of file
 +)
 --- /dev/null
-+++ b/thonny/plugins/pixel_theme/__init__.py
++++ b/thonny/plugins/pi_theme/__init__.py
 @@ -0,0 +1,94 @@
 +import os.path
 +import tkinter
@@ -67,13 +67,13 @@
 +    style.map("TNotebook.Tab", background=[("!selected", "#d0d0d0"), ("selected", MAIN_BACKGROUND)])
 +    style.map("ButtonNotebook.Tab", background=[("!selected", "#d0d0d0"), ("selected", MAIN_BACKGROUND)])
 +    menfont=tkinter.font.nametofont("TkMenuFont")
-+    menfont.configure(family="Roboto Light")
++    menfont.configure(family="Piboto Light")
 +    menfont.configure(size=12)
 +    deffont=tkinter.font.nametofont("TkDefaultFont")
-+    deffont.configure(family="Roboto Light")
++    deffont.configure(family="Piboto Light")
 +    deffont.configure(size=12)
 +    headfont=tkinter.font.nametofont("TkHeadingFont")
-+    headfont.configure(family="Roboto Light")
++    headfont.configure(family="Piboto Light")
 +    headfont.configure(size=12)
 +
 +
