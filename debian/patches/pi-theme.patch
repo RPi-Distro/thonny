@@ -46,7 +46,7 @@
 +)
 --- /dev/null
 +++ b/thonny/plugins/pi_theme/__init__.py
-@@ -0,0 +1,94 @@
+@@ -0,0 +1,114 @@
 +import os.path
 +import tkinter
 +import re
@@ -66,15 +66,35 @@
 +                    background="#f0f0f0", foreground="#808080")
 +    style.map("TNotebook.Tab", background=[("!selected", "#d0d0d0"), ("selected", MAIN_BACKGROUND)])
 +    style.map("ButtonNotebook.Tab", background=[("!selected", "#d0d0d0"), ("selected", MAIN_BACKGROUND)])
++    for line in open (os.path.join (os.path.expanduser ("~"), ".config/lxsession/LXDE-pi/desktop.conf"), "r"):
++        if "sGtk/FontName" in line:
++            fontname = re.search (r"=([^0-9]*) ([0-9]*)", line, re.M).group(1)
++            fontsize = re.search (r"=([^0-9]*) ([0-9]*)", line, re.M).group(2)
++            if "Bold" in fontname:
++                fontweight = "bold"
++                fontname = fontname.replace (" Bold", "")
++            else:
++                fontweight = "normal"
++            if "Italic" in fontname:
++                fontslant = "italic"
++                fontname = fontname.replace (" Italic", "")
++            else:
++                fontslant = "roman"
 +    menfont=tkinter.font.nametofont("TkMenuFont")
-+    menfont.configure(family="Piboto Light")
-+    menfont.configure(size=12)
++    menfont.configure(family=fontname)
++    menfont.configure(size=fontsize)
++    menfont.configure(weight=fontweight)
++    menfont.configure(slant=fontslant)
 +    deffont=tkinter.font.nametofont("TkDefaultFont")
-+    deffont.configure(family="Piboto Light")
-+    deffont.configure(size=12)
++    deffont.configure(family=fontname)
++    deffont.configure(size=fontsize)
++    deffont.configure(weight=fontweight)
++    deffont.configure(slant=fontslant)
 +    headfont=tkinter.font.nametofont("TkHeadingFont")
-+    headfont.configure(family="Piboto Light")
-+    headfont.configure(size=12)
++    headfont.configure(family=fontname)
++    headfont.configure(size=fontsize)
++    headfont.configure(weight=fontweight)
++    headfont.configure(slant=fontslant)
 +
 +
 +def _running_on_pixel():
